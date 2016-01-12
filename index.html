@@ -12,41 +12,113 @@
 
     
     <link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.10.10/css/dataTables.foundation.min.css"/>
+    <link rel="stylesheet" type="text/css" href="DataTables/Buttons-1.1.0/css/buttons.dataTables.min.css"/>
 
     <script type="text/javascript" src="DataTables/DataTables-1.10.10/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="DataTables/DataTables-1.10.10/js/dataTables.foundation.min.js"></script>
+    <script type="text/javascript" src="DataTables/Buttons-1.1.0/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="DataTables/Buttons-1.1.0/js/buttons.colVis.min.js"></script>
 
-    <!-- <script type="text/javascript"> -->
-    <!--   $(document).ready(function() { -->
-    <!--   $('#table1').DataTable(); -->
-    <!--   } ); -->
-    <!-- </script> -->
 
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('#table1').DataTable( {
-        initComplete: function () {
-            this.api().columns().every( function () {
-                var column = this;
-                var select = $('<select><option value=""></option></select>')
-                    .appendTo( $(column.footer()).empty() )
-                    .on( 'change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
- 
-                        column
-                            .search( val ? '^'+val+'$' : '', true, false )
-                            .draw();
-                    } );
- 
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
-            } );
-        }
-    } );
+    <script type="text/javascript">
+
+$(document).ready(function() {
+
+// Get buttons show/hide
+
+$('#table1').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'columnsToggle'
+        ]
 } );
+
+
+    // Setup - add a text input to each footer cell
+    $('#table1 tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#table1').DataTable();
+ 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+
+} );
+
+
+
+
+
+      
+<!--       Following is search colom -->
+<!-- $(document).ready(function() { -->
+
+<!--     // Setup - add a text input to each footer cell -->
+<!--     $('#table1 tfoot th').each( function () { -->
+<!--         var title = $(this).text(); -->
+<!--         $(this).html( '<input type="text" placeholder="Search '+title+'" />' ); -->
+<!--     } ); -->
+ 
+<!--     // DataTable -->
+<!--     var table = $('#table1').DataTable(); -->
+ 
+<!--     // Apply the search -->
+<!--     table.columns().every( function () { -->
+<!--         var that = this; -->
+ 
+<!--         $( 'input', this.footer() ).on( 'keyup change', function () { -->
+<!--             if ( that.search() !== this.value ) { -->
+<!--                 that -->
+<!--                     .search( this.value ) -->
+<!--                     .draw(); -->
+<!--             } -->
+<!--         } ); -->
+<!--     } ); -->
+
+<!-- } ); -->
+
+
+
+
+<!--       <\!-- Following is filtering -\-> -->
+<!--     $(document).ready(function() { -->
+<!--     $('#table1').DataTable( { -->
+<!--         initComplete: function () { -->
+<!--             this.api().columns().every( function () { -->
+<!--                 var column = this; -->
+<!--                 var select = $('<select><option value=""></option></select>') -->
+<!--                     .appendTo( $(column.footer()).empty() ) -->
+<!--                     .on( 'change', function () { -->
+<!--                         var val = $.fn.dataTable.util.escapeRegex( -->
+<!--                             $(this).val() -->
+<!--                         ); -->
+ 
+<!--                         column -->
+<!--                             .search( val ? '^'+val+'$' : '', true, false ) -->
+<!--                             .draw(); -->
+<!--                     } ); -->
+ 
+<!--                 column.data().unique().sort().each( function ( d, j ) { -->
+<!--                     select.append( '<option value="'+d+'">'+d+'</option>' ) -->
+<!--                 } ); -->
+<!--             } ); -->
+<!--         } -->
+<!--     } ); -->
+<!-- } ); -->
+
 </script> 
     
   </head>
@@ -128,15 +200,14 @@
 	<!-- <div class="panel"> -->
 	<!--   <p>Here come the individual studies.  Table goes here!</p> -->
 
-
 	<table id="table1" class="display" cellspacing="0" width="100%">
           <thead>
             <tr>
-              <th>Authors</th>
-              <th>Year</th>
+              <th>AU</th>
+              <th>YR</th>
               <th>Design</th>
               <th>N</th>
-              <th>Country</th>
+              <th>CNTRY</th>
               <th>Age</th>
 	      <th>Days</th>
 	      <th>Measure</th>
@@ -148,11 +219,11 @@
           </thead>
           <tfoot>
             <tr>
-            <th>Authors</th>
-              <th>Year</th>
+            <th>AU</th>
+              <th>YR</th>
               <th>Design</th>
               <th>N</th>
-              <th>Country</th>
+              <th>CNTRY</th>
               <th>Age</th>
 	      <th>Days</th>
 	      <th>Measure</th>
@@ -177,8 +248,8 @@
               <td>E</td>
               <td>F</td>
             </tr>
-	     <tr>
-              <td>A</td>
+	       <tr>
+              <td>B</td>
               <td>B</td>
               <td>C</td>
               <td>D</td>
@@ -190,21 +261,7 @@
               <td>D</td>
               <td>E</td>
               <td>F</td>
-             </tr>
-	      <tr>
-              <td>A</td>
-              <td>B</td>
-              <td>C</td>
-              <td>D</td>
-              <td>E</td>
-              <td>F</td>
-	      <td>A</td>
-              <td>B</td>
-              <td>C</td>
-              <td>D</td>
-              <td>E</td>
-              <td>F</td>
-              </tr>
+               </tr>
 	       <tr>
               <td>A</td>
               <td>B</td>

@@ -115,3 +115,12 @@ div.dataTables_scrollFoot table {
   margin-top: 0 !important;
   border-top: none;
 }
+
+
+/* This chunk below is for searchable table colum */
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
