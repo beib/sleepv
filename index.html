@@ -20,15 +20,25 @@
     <script type="text/javascript" src="DataTables/Buttons-1.1.0/js/buttons.colVis.min.js"></script>
 
 
-<style>
-hr {
-height: 10px;
-width: inherit;
-	border: 0;
-	box-shadow: 0 8px 10px -10px #8c8b8b inset;
-}
+    <style>
+      <!-- hr { -->
+      <!-- height: 10px; -->
+      <!-- width: inherit; -->
+      <!-- border: 0; -->
+      <!-- box-shadow: 0 6px 10px -12px #8c8b8b inset; -->
+      <!-- } -->
 
-</style>
+      
+      hr { 
+      border: 0; 
+      height: 1px; 
+      background-image: -webkit-linear-gradient(left, #FFFFFF, #DDDDDD, #FFFFFF);
+      background-image: -moz-linear-gradient(left, #FFFFFF, #DDDDDD, #FFFFFF);
+      background-image: -ms-linear-gradient(left, #FFFFFF, #DDDDDD, #FFFFFF);
+      background-image: -o-linear-gradient(left, #FFFFFF, #DDDDDD, #FFFFFF);
+      }
+    </style>
+
 
 
     <script type="text/javascript">
@@ -125,64 +135,6 @@ width: inherit;
       } );
 
 
-      
-      <!--       Following is search colom -->
-      <!-- $(document).ready(function() { -->
-
-      <!--     // Setup - add a text input to each footer cell -->
-      <!--     $('#table1 tfoot th').each( function () { -->
-      <!--         var title = $(this).text(); -->
-      <!--         $(this).html( '<input type="text" placeholder="Search '+title+'" />' ); -->
-      <!--     } ); -->
-      
-      <!--     // DataTable -->
-      <!--     var table = $('#table1').DataTable(); -->
-      
-      <!--     // Apply the search -->
-      <!--     table.columns().every( function () { -->
-      <!--         var that = this; -->
-      
-      <!--         $( 'input', this.footer() ).on( 'keyup change', function () { -->
-      <!--             if ( that.search() !== this.value ) { -->
-      <!--                 that -->
-      <!--                     .search( this.value ) -->
-      <!--                     .draw(); -->
-      <!--             } -->
-      <!--         } ); -->
-      <!--     } ); -->
-
-      <!-- } ); -->
-
-
-
-
-      <!--       <\!-- Following is filtering -\-> -->
-      <!--     $(document).ready(function() { -->
-      <!--     $('#table1').DataTable( { -->
-      <!--         initComplete: function () { -->
-      <!--             this.api().columns().every( function () { -->
-      <!--                 var column = this; -->
-      <!--                 var select = $('<select><option value=""></option></select>') -->
-      <!--                     .appendTo( $(column.footer()).empty() ) -->
-      <!--                     .on( 'change', function () { -->
-      <!--                         var val = $.fn.dataTable.util.escapeRegex( -->
-      <!--                             $(this).val() -->
-      <!--                         ); -->
-      
-      <!--                         column -->
-      <!--                             .search( val ? '^'+val+'$' : '', true, false ) -->
-      <!--                             .draw(); -->
-      <!--                     } ); -->
-      
-      <!--                 column.data().unique().sort().each( function ( d, j ) { -->
-      <!--                     select.append( '<option value="'+d+'">'+d+'</option>' ) -->
-      <!--                 } ); -->
-      <!--             } ); -->
-      <!--         } -->
-      <!--     } ); -->
-      <!-- } ); -->
-
-
     </script> 
     
   </head>
@@ -198,6 +150,7 @@ width: inherit;
 	    <dd data-magellan-arrival="themes"><a href="#themes">Themes</a></dd>
 	    <dd data-magellan-arrival="studies"><a href="#studies">Studies</a></dd>
 	    <dd data-magellan-arrival="search"><a href="#search">Search Method</a></dd>
+	    <dd data-magellan-arrival="methods"><a href="#methods">IIV Methods</a></dd>
 	    <dd data-magellan-arrival="about"><a href="#about">About/Contact</a></dd>
 	  </dl>
 	</div>
@@ -215,8 +168,8 @@ width: inherit;
       </div>
     </div>
 
- <br>
-    <hr>
+    <br>
+    <!-- <hr> -->
     <br>
 
     
@@ -261,8 +214,8 @@ width: inherit;
       </div>
     </div>
 
- <br>
-    <hr>
+    <br>
+    <!-- <hr> -->
     <br>
 
     <div class="row">
@@ -274,7 +227,7 @@ width: inherit;
 	<!-- <div class="panel"> -->
 	<!--   <p>Here come the individual studies.  Table goes here!</p> -->
 
-	<table id="table1" class="display" cellspacing="0" width="100%" style="font-family: AvenirNextCondensed-Medium;">
+	<table id="table1" class="display" cellspacing="0" width="100%" style="font-family: AvenirNextCondensed-Regular;">
           <thead>
             <tr>
               <th>Author</th>
@@ -1476,14 +1429,14 @@ width: inherit;
             </tr>
 
 	</table>
-	
       </div>
-    </div>
+      <p style="font-size:80%; font-family: AvenirNextCondensed-Regular" align="justify"><b>Note:</b> “+” and “-” indicate statistically significant positive and negative association | “<” and “>” indicate statistically lower (earlier in sleep timing) or higher (later in sleep timing) than | “~” = associated with | “m” and “v” attached to a sleep variable indicate the mean and IIV of this variable respectively | ACTH = adrenocorticotropic hormone | aMCI = amnesic mild cognitive impairment | b/w = between | BL = baseline | BT = bedtime | CBT-I = cognitive behavioural therapy for insomnia | CKD = chronic kidney disease | CMI = insomnia with comorbid psychiatric disorders | Com = community sample | Ctrl = control group | DSPD = delayed sleep phase disorder | Effect sizes: wherever reported, effect sizes were reported as small (.1 ≤ r <.3 or .2 ≤ Cohen’s d < .5), moderate (.3 ≤ r <.5 or .5 ≤ Cohen’s d < .8), large (r ≥ .5 or Cohen’s d ≥ .8) | ESRD = end stage renal disease | Fragmentation = actigraphy fragmentation index | FU = follow-up | IIV = intraindividual variability | IMD = insomnia related to mental disorder | ISD = individual standard deviation | ISI = Insomnia Severity Index | LO = lights out | M = male | NA = negative affect | Nap = daily nap time | NR = not reported | Nr. = Number of | NS = non-significant | PI = primary insomnia | POST = post-intervention | PSQI = total scores of Pittsburgh Sleep Quality Index | Pts = patients | PVT = psychomotor vigilance task | Quality = sleep diary subjective sleep quality | RCT = randomized controlled trial | RT = rise-time | SAD = Sleep Assessment Device (Somtrak ST-100) | SD = standard deviation | SE = sleep efficiency | SF-36 = 36 item Short Form Survey | SM = Sleep Midpoint | SOL = sleep onset latency | SOT = time of sleep onset | SRM = Social Rhythm Metric | SWL = satisfaction with life | T1, T2, … = the 1st, 2nd, … time point | TIB = time-in-bed | TST = total sleep time | TWT = total wake time | Uni = university students | WASO = wake after sleep onset, with n and % signifying the number or percentage | WT = time of awakening | x: variable interaction.</p>
+																									 </div>
 
-    <br>
+
     <hr>
     <br>
-  
+    
     
     <div class="row">
       <div class="large-12 columns">
@@ -1493,7 +1446,7 @@ width: inherit;
 	  <p> Systematic searches were carried out across five databases (PubMed, CINAHL Plus, PsycInfo, Scopus, and Embase). A filter was applied in all databases to include studies on human adults aged 18 and above. There was no language restriction. A systematic review on records from the inception of each database to November 2014 was published <a href ="http://www.sciencedirect.com/science/article/pii/S1087079215000908" target="_blank">here</a>. Content on this website will be updated once a year using the same search strategies as the original publication (see details <a href ="http://www.sciencedirect.com/science/article/pii/S1087079215000908" target="_blank">here</a> and a brief summary below).</p>
 
 	  <div style="overflow-x:auto;">
-	    <table class="display" cellspacing="0" width="100%" style="font-family: AvenirNextCondensed-Medium;">
+	    <table class="display" cellspacing="0" width="100%" style="font-family: AvenirNextCondensed-Regular";>
 	      <thead>
 		<tr>
 		  <th>Inclusion criteria</th>
@@ -1515,28 +1468,76 @@ width: inherit;
 		      <li> Was not an empirical study;</li>
 		      <li> Was not a peer-reviewed publications;</li>
 		      <li> Sleep was not assessed daily, or daily assessment was for < 3 days, or sleep measurements were based on polysomnography;</li>
-		      <li> Daily IIV of sleep parameters were not quantitatively examined in relation to non-sleep related factors.</li>
+										       <li> Daily IIV of sleep parameters were not quantitatively examined in relation to non-sleep related factors.</li>
 		    </ol>
 		  </td>
 		</tr>
 	    </table>
+	    
 	  </div>
 
-	   
-	   
+	  
+	  
 
-	<p>All title/abstract and full-text screening, and a randomly selected 25% of data extraction were carried out by 2 independent raters for reliability and accuracy.  Data extraction form was based on the <a href = "http://www.strobe-statement.org/" target="_blank">STROBE statement</a>.</p>
+	  <p>All title/abstract and full-text screening, and a randomly selected 25% of data extraction were carried out by 2 independent raters for reliability and accuracy.  Data extraction form was based on the <a href = "http://www.strobe-statement.org/" target="_blank">STROBE statement</a>.</p>
 	</div>
       </div>
     </div>
 
 
 
- <br>
-    <hr>
+    <br>
+    <!-- <hr> -->
+    <br>
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+	<h3 data-magellan-destination="methods">Methods for Quantifying IIV</h3>
+	<a name="methods"></a>
+	<div class="panel">
+
+	  <ul class="tabs" data-tab>
+	    <li class="tab-title active" role="presentation"><a href="#panel2-1" role="tab" tabindex="0" aria-selected="true" aria-controls="panel2-1">ISD, CV</a></li>
+	    <li class="tab-title" role="presentation"><a href="#panel2-2" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-2">MSSD</a></li>
+	    <li class="tab-title" role="presentation"><a href="#panel2-3" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-3">Wiley Model</a></li>
+	    <li class="tab-title" role="presentation"><a href="#panel2-4" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-4">Hedeker Model</a></li>
+	    <li class="tab-title" role="presentation"><a href="#panel2-5" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-5">Phillips Regularity Index</a></li>
+	  </ul>
+
+	  <div class="tabs-content">
+	    <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-1">
+	      <h4>First Panel Heading</h4>
+	      <p>First panel content goes here...</p>
+	    </section>
+	    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
+	      <h4>Second Panel Heading</h4>
+	      <p>Second panel content goes here...</p>
+	    </section>
+	    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
+	      <h4>Third Panel Heading</h4>
+	      <p>Third panel content goes here...</p>
+	    </section>
+	    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-4">
+	      <h4>Fourth Panel Heading</h4>
+	      <p>Fourth panel content goes here...</p>
+	    </section>
+	    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-5">
+	      <h4>Fifth Panel Heading</h4>
+	      <p>Fifth panel content goes here...</p>
+	    </section>
+	  </div>
+
+	</div>
+      </div>
+    </div>
+
+    <br>
+<!-- <hr> -->
     <br>
 
 
+    
 
     <div class="row">
       <div class="large-12 columns">
@@ -1550,7 +1551,7 @@ width: inherit;
 
     
 
-     <br>
+    <br>
     <hr>
     <br>
     
