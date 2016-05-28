@@ -9173,3 +9173,7 @@ th.hide-for-touch {
     }
 }
 
+mark {
+    background-color: #FFFC7F;
+    /* color: black; */
+}
