@@ -35,10 +35,10 @@
       <!-- border: 0; -->
       <!-- box-shadow: 0 6px 10px -12px #8c8b8b inset; -->
       <!-- } -->
-      
-      hr { 
-      border: 0; 
-      height: 1px; 
+
+      hr {
+      border: 0;
+      height: 1px;
       background-image: -webkit-linear-gradient(left, #FFFFFF, #CCCCCC, #FFFFFF);
       background-image: -moz-linear-gradient(left, #FFFFFF, #CCCCCC, #FFFFFF);
       background-image: -ms-linear-gradient(left, #FFFFFF, #CCCCCC, #FFFFFF);
@@ -56,17 +56,17 @@
       buttons: ['columnsToggle'],
 
       "columnDefs": [
-      
+
       <!-- { -->
       <!-- "targets": [ 1 ], -->
       <!-- "visible": false -->
       <!-- }, -->
-      
+
       {
       "targets": [ 2 ],
       "visible": false
       },
-      
+
       {
       "targets": [ 3 ],
       "visible": false
@@ -76,7 +76,7 @@
       "targets": [ 5 ],
       "visible": false
       },
-      
+
       {
       "targets": [ 6 ],
       "visible": false
@@ -87,7 +87,7 @@
       "visible": false
       },
 
-      
+
       {
       "targets": [ 8 ],
       "visible": false
@@ -102,7 +102,7 @@
       <!-- "targets": [ 11 ], -->
       <!-- "visible": false -->
       <!-- }, -->
-      
+
       {
       "targets": [ 13 ],
       "visible": false
@@ -115,22 +115,22 @@
 
       ]
 
-      
+
       } );
-      
+
       // Setup - add a text input to each footer cell
       $('#table1 tfoot th').each( function () {
       var title = $(this).text();
       $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
       } );
-      
+
       // DataTable
       var table = $('#table1').DataTable();
-      
+
       // Apply the search
       table.columns().every( function () {
       var that = this;
-      
+
       $( 'input', this.footer() ).on( 'keyup change', function () {
       if ( that.search() !== this.value ) {
       that
@@ -231,10 +231,11 @@
             target="_blank">the same methodology</a> as in the initial
             systematic review will occur annually in December/January. The
             initial review covered records up to November 2014. The most recent
-            update in Jan 2016 added an additional 4 studies (marked with
+            systematic update in Jan 2016 added an additional 4 studies (marked with
             <b>*</b> in the <a href="#studies">table</a>). Between annual
             updates, we will also add new studies that are notified via search
-            alerts or other miscellaneous sources (marked with <font color=
+            alerts or other miscellaneous sources (see the additional 6 studies
+	    marked with <font color=
             "red"><b>!</b></font>).</p>
 
 
@@ -343,7 +344,191 @@
 
 
                 <tbody>
-		                      <tr>
+
+
+		  <tr>
+                        <td>
+                            <a href="http://dx.doi.org/10.5664/jcsm.5872"
+                            target="_blank"><font color="red"><b>!</b></font>
+                            Ong et al.</a>
+                        </td>
+
+                        <td>2016</td>
+
+                        <td>Intervention</td>
+
+                        <td>3-arm RCT: MBSR, MBTI, self-monitoring CTRL; daily diary for BL (1 w),  EARLY (2 w), LATE (6 w), and POST intervention.</td>
+
+                        <td>54 Insomnia</td>
+
+                        <td>NR (US)</td>
+
+                        <td>42.9</td>
+
+                        <td>74.10%</td>
+
+                        <td>7 BL, 14 EARLY, 42 LATE, and 7 POST intervention</td>
+
+                        <td>Diary</td>
+
+                        <td>Location-scale mixed model</td>
+
+                        <td>D</td>
+
+                        <td>D: Treatment-related changes in SE</td>
+
+                        <td>SEm</td>
+
+                        <td>
+                            <ul style="font-size: 13px;">
+                                <li>Simple effects on SEv: MBSR had +reduction at EARLY, LATE, and POST; MBTI had +reduction at LATE and POST but not EARLY.</li>
+                                <li>Compared to CTRL: MBSR had +reduction in SEv from BL to EARLY and LATE (30%), but not to POST; NS. b/w MBTI and CTRL.</li>
+				<li>Compared to MBTI, MBSR had +reduction in SEv from BL to EARLY (but not to LATE or POST).</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+
+
+		  <tr>
+                        <td>
+                            <a href="http://dx.doi.org/10.1016/j.comppsych.2016.05.016"
+                            target="_blank"><font color="red"><b>!</b></font>
+                            Ng et al.</a>
+                        </td>
+
+                        <td>2016</td>
+
+                        <td>Observational</td>
+
+                        <td>7 d sleep diary and self-report questionnaires</td>
+
+                        <td>84 patients with Bipolar Disorder</td>
+
+                        <td>100% Chinese</td>
+
+                        <td>44.04 (10.49)</td>
+
+                        <td>67.86%</td>
+
+                        <td>7</td>
+
+                        <td>Diary</td>
+
+                        <td>Multilevel modeling of square successive difference</td>
+
+                        <td>A, C</td>
+
+                        <td>A: Age; <br>
+			  C: Social rhythm, chronotype, DBAS, sleep hygiene, major depression occurrence, type of Bipolar Disorder, depressive symptoms, mania severity.</td>
+
+                        <td>None</td>
+
+                        <td>
+                            <ul style="font-size: 13px;">
+                                <li>TSTv ~ -social rhythm regularity, +major depression past 5 years;</li>
+                                <li>SOLv and SEv ~ -social rhythm regularity;</li>
+				<li>WASOv ~ +DBAS, onset of major depression at 2 year follow-up;</li>
+				<li>Other factors NS related to any sleepv variables: age, Bipolar I or II, mania severity, depressive symptoms.</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+
+
+
+
+		  <tr>
+                        <td>
+                            <a href="http://dx.doi.org/10.1111/jsr.12393"
+                            target="_blank"><font color="red"><b>!</b></font>
+                            Chontong et al.</a>
+                        </td>
+
+                        <td>2016</td>
+
+                        <td>Observational</td>
+
+                        <td>5 d actigraphy and medical records extraction for correlates</td>
+
+                        <td>41 patients with type 1 diabetes, stable insulin regimen</td>
+
+                        <td>NR (THAI)</td>
+
+                        <td>41.5 (14.8)</td>
+
+                        <td>61%</td>
+
+                        <td>5</td>
+
+                        <td>Actigraphy with Diary</td>
+
+                        <td>ISD</td>
+
+                        <td>B, C</td>
+
+                        <td>B: HbA1c, insulin requirement; <br>
+			  C: depressive symptoms.</td>
+
+                        <td>Neuropathic symptoms, OSA risk, self-reported sleep quality</td>
+
+                        <td>
+                            <ul style="font-size: 13px;">
+                                <li>Both SMv and TSTv ~  +HbA1c;</li>
+                                <li>High vs Low TSTv groups: High group had higher HbA1c, and higher required insulin (NS for diabetes complication or depressive symptoms).</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+
+
+
+
+		  <tr>
+                        <td>
+                            <a href="http://dx.doi.org/10.1007/s10339-016-0754-9"
+                            target="_blank"><font color="red"><b>!</b></font>
+                            Whiting & Murdock</a>
+                        </td>
+
+                        <td>2016</td>
+
+                        <td>Observational</td>
+
+                        <td>7 d actigraphy before in-lab cognitive tests</td>
+
+                        <td>81 Uni</td>
+
+                        <td>87% White, 10% Asian</td>
+
+                        <td>20.54 (1.22)</td>
+
+                        <td>57.80%</td>
+
+                        <td>3</td>
+
+                        <td>Actigraphy with Diary</td>
+
+                        <td>ISD</td>
+
+                        <td>C</td>
+
+                        <td>C: Attentional capture</td>
+
+                        <td>Means of sleep variables</td>
+
+                        <td>
+                            <ul style="font-size: 13px;">
+                                <li>Variable sleep interval duration ~ - attentional capture, especially for those with short sleep duration;</li>
+                                <li>NS findings for SOTv and WTv.</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+
+
+
+		  <tr>
                         <td>
                             <a href="http://dx.doi.org/10.1080/15402002.2015.1120200"
                             target="_blank"><font color="red"><b>!</b></font>
@@ -386,7 +571,7 @@
                     </tr>
 
 
-		  
+
                     <tr>
                         <td>
                           <a href="http://dx.doi.org/10.5665/sleep.5464"
@@ -3215,7 +3400,7 @@
         insomnia related to mental disorder <font color="#FBB829">|</font> ISD
         = individual standard deviation <font color="#FBB829">|</font> ISI =
         Insomnia Severity Index <font color="#FBB829">|</font> LO = lights out
-        <font color="#FBB829">|</font> M = male <font color="#FBB829">|</font>
+        <font color="#FBB829">|</font> M = male <font color="#FBB829">|</font> MBSR = mindfulness-based stress reduction <font color="#FBB829">|</font> MBTI = mindfulness-based therapy for insomnia <font color="#FBB829">|</font>
         MSSD = Mean Square of Successive Difference <font color=
         "#FBB829">|</font> NA = negative affect <font color="#FBB829">|</font>
         Nap = daily nap time <font color="#FBB829">|</font> NR = not reported
@@ -3770,10 +3955,10 @@
     </div>
     <script src="js/foundation.min.js">
     </script> <!-- <script src="js/foundation.magellan.js"></script>     -->
-     
+
     <script>
       $(document).foundation();
-    </script> 
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
