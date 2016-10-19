@@ -3820,18 +3820,66 @@
 
                 <section aria-hidden="true" class="content" id="panel2-2" role=
                 "tabpanel">
-                    <h4>Bayesian Variability Model</h4>
-
-
-                    <p>A flexible Bayesian method for analyzing was developed
-                    by Wiley et al. An open access pre-print of the method can
-                    be accessed below. In addition to introducing the Bayesian
-                    Variability Model, this article also provides a review on
-                    existing IIV methods, demonstrates accuracy of the Bayesian
-                    method using simulation studies, and discusses
-                    methodological and practical considerations in choosing IIV
-                    methods.</p>
-
+                    <h4>Bayesian Variability Model (BVM)</h4>
+	    
+                    <p>
+		      A flexible Bayesian method for analyzing was developed
+                      by Wiley et al. An open access pre-print of the method can
+                      be accessed below. The
+		      <span data-tooltip aria-haspopup="true" class="has-tip" title="Bayesian Variability Model">BVM</span>
+		      can be thought of having two components:
+		    </p>
+		    <ol>
+		      <li>A measurement model that estimates intraindividual
+			variability (IIV)</li>
+		      <li>A substantive model that predicts an outcome from
+			IIV and other predictors as desired. Often, the
+			intraindividual mean (IIM) is included at a minimum to
+			control for the fact that the IIV and IIM are commonly
+			correlated, especially for sleep variables such as
+			sleep onset latency.</li>
+		    </ol>
+		    <p>
+		      The key advance of the BVM is
+		      that by simultaneously estimating IIV with the substantive
+		      model of interest, it can take into account the measurement
+		      error of IIV. For IIM, measurement error may be modest,
+		      but measurement for IIV is substantial unless many
+		      observations are available. Practically, the BVM can be
+		      considered a special case of Bayesian, location-scale,
+		      multilevel, structural equation models in that includes
+		      both a measurement model and structural model (IIV
+		      predicting the outcome of interest).
+		    </p>
+		    <p>
+		      The BVM differs from existing methods for modeling IIV
+		      in accounting for measurement error and using IIV as a
+		      predictor, rather than an outcome to be predicted, such
+		      as for Hedeker's Location-Scale Mixed Model. Simulation
+		      studies show that the BVM produces
+		      <span data-tooltip aria-haspopup="true" class="has-tip" title="Bias refers to whether a model systematically over or under estimates the relationship at the population level. Bias is particularly problematic for science as it means that results are systematically wrong, not just variable due to different samples or covariates included.">unbiased estimates</span>
+		      for the relationship between IIV and an outcome as well as
+		      good coverage, meaning the 95% credible intervals include
+		      the true value about 95% of the time, with as few as five
+		      repeated measures used to assess IIV. In contrast using
+		      an individual standard deviation and ignoring measurement
+		      error yields substantial bias in the point estimates and
+		      inaccurate confidence intervals over or under estimating
+		      the true population relationship.
+		    </p>
+		    <p>The BVM uses freely available, open-source, scientific
+		      software. The user interface is written in
+		      <a href="https://www.r-project.org/">R</a>
+		      and <a href="http://mc-stan.org/">Stan</a> is used for
+		      the actual Bayesian estimation. One challenge to the BVM
+		      is that due to simultaneously estimating IIV and the
+		      substantive model, models tend to be computationally
+		      intensive and may require several minutes to complete
+		      for small datasets (e.g., 100 participants, 7-14
+		      repeated measures per participant), and longer for
+		      larger datasets. A modern, desktop computer with at
+		      least 2-4 processors or access to a server is recommended.
+		    </p>
 
                     <blockquote cite="http://arxiv.org/abs/1411.2961">
                         <a href="http://arxiv.org/abs/1411.2961" target=
